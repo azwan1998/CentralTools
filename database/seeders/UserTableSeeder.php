@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\Koli;
+use App\Models\Item;
 use Illuminate\Database\Seeder;
 
 class UserTableSeeder extends Seeder
@@ -20,5 +22,6 @@ class UserTableSeeder extends Seeder
         $user->role = "admin";
         $user->password = bcrypt('12345678');
         $user->save();
+
     }
 }

@@ -12,8 +12,8 @@ class Item extends Model
     protected $fillable = [
         'nama',
         'qty',
-        'id_user',
-        'id_koli',
+        'user_id',
+        'koli_id',
     ];
 
     public function users()

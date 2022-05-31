@@ -22,4 +22,4 @@ use App\Http\Controllers\API\ItemController;
 Route::post('register',[UserController::class, 'store']);
 Route::post('putin',[ItemController::class, 'store']);
 Route::post('takeout/{id}',[ItemController::class, 'update']);
-Route::post('show/{id}',[ItemController::class, 'show']);
+Route::get('koli/common/{id}',[ItemController::class, 'show']);

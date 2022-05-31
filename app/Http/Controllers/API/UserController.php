@@ -21,9 +21,9 @@ class UserController extends Controller
         $data = User::all();
 
         if($data){
-            return ApiFormatter::createApi(200, 'Success', $data);
+            return ApiFormatter::createApi(204, 'No Content', $data);
         }else{
-            return ApiFormatter::createApi(204, 'No Content');
+            return ApiFormatter::createApi(404, 'failed');
         }
     }
 
@@ -63,12 +63,12 @@ class UserController extends Controller
             $data = User::where('id','=', $user->id)->get();
 
             if($data){
-                return ApiFormatter::createApi(200, 'Success', $data);
+                return ApiFormatter::createApi(204, 'No content');
             }else{
-                return ApiFormatter::createApi(204, 'No Content');
+                return ApiFormatter::createApi(404, 'eror');
             }
         }catch(Exception $error){
-            return ApiFormatter::createApi(204, 'No Content');
+            return ApiFormatter::createApi(404, 'eror');
         }
     }
 

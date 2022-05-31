@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nama');
             $table->integer('qty');
-            $table->foreignId('id_user');
-            $table->foreignId('id_item');
+            $table->foreignId('user_id');
+            $table->foreignId('koli_id');
             $table->timestamps();
         });
     }

@@ -14,7 +14,7 @@ class Koli extends Model
 
     protected $fillable = [
         'koli',
-        'id_user',
+        'user_id',
     ];
 
     public function users()
