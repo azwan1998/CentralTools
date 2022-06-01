@@ -21,7 +21,7 @@ class UserController extends Controller
         $data = User::all();
 
         if($data){
-            return ApiFormatter::createApi(204, 'No Content', $data);
+            return ApiFormatter::createApi(200, 'Success', $data);
         }else{
             return ApiFormatter::createApi(404, 'failed');
         }
@@ -114,6 +114,14 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $user = User::findOrfail($id);
+
+        $data = $user->delete();
+        
+        if($data){
+            return ApiFormatter::createApi(200,'No Content', );
+        }else{
+            return ApiFormatter::createApi(404, 'error');
+        }
     }
 }

@@ -10,8 +10,6 @@ class Koli extends Model
     use HasFactory;
 
 
-    protected $table = 'kolis';
-
     protected $fillable = [
         'koli',
         'user_id',

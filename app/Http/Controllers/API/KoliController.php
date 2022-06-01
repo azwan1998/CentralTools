@@ -3,15 +3,12 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Item;
+use App\Models\Koli;
 use Illuminate\Http\Request;
-use App\Http\Api\Formatter;
 use Exception;
 use App\Helpers\ApiFormatter;
-use App\Models\Koli;
-use App\Models\User;
 
-class ItemController extends Controller
+class KoliController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +17,7 @@ class ItemController extends Controller
      */
     public function index()
     {
-        
+        //
     }
 
     /**
@@ -43,28 +40,24 @@ class ItemController extends Controller
     {
         try{
             $request->validate([
-                'name' => 'required',
-                'qty' => 'required',
+                'koli' => 'required',
                 'user_id' => 'required',
-                'koli_id' => 'required',
             ]);
 
-            $item = Item::create([
-                'name' => $request->name,
-                'qty' => $request->qty,
+            $koli = Koli::create([
+                'koli' => $request->koli,
                 'user_id' => $request->user_id,
-                'koli_id' => $request->koli_id,
             ]);
 
-            $data = Item::where('id','=', $item->id)->get();
+            $data = Koli::where('id','=', $koli->id)->get();
 
             if($data){
-                return ApiFormatter::createApi(204, 'No Content');
+                return ApiFormatter::createApi(204, 'No content');
             }else{
-                return ApiFormatter::createApi(404, 'failed');
+                return ApiFormatter::createApi(404, 'eror');
             }
         }catch(Exception $error){
-            return ApiFormatter::createApi(404, 'failed');
+            return ApiFormatter::createApi(404, 'eror');
         }
     }
 
@@ -76,13 +69,7 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        $data = User::with(['kolis', 'items'])->whereIn('id',['2','3'])->get();
-
-        if($data){
-            return ApiFormatter::createApi(200,'', $data);
-        }else{
-            return ApiFormatter::createApi(404, 'error');
-        }
+        //
     }
 
     /**
@@ -105,33 +92,7 @@ class ItemController extends Controller
      */
     public function update(Request $request, $id)
     {
-        try{
-            $request->validate([
-                'name' => 'required',
-                'qty' => 'required',
-                'user_id' => 'required',
-                'koli_id' => 'required',
-            ]);
-
-            $item = Item::findOrFail($id);
-
-            $item->update([
-                'name' => $request->name,
-                'qty' => $request->qty,
-                'user_id' => $request->user_id,
-                'koli_id' => $request->koli_id
-            ]);
-
-            $data = Item::where('id','=', $item->id)->get();
-
-            if($data){
-                return ApiFormatter::createApi(204, 'No Content');
-            }else{
-                return ApiFormatter::createApi(404, 'error');
-            }
-        }catch(Exception $error){
-            return ApiFormatter::createApi(404, 'error');
-        }
+        //
     }
 
     /**
@@ -142,9 +103,9 @@ class ItemController extends Controller
      */
     public function destroy($id)
     {
-        $item = Item::findOrfail($id);
+        $koli = Koli::findOrfail($id);
 
-        $data = $item->delete();
+        $data = $koli->delete();
         
         if($data){
             return ApiFormatter::createApi(200,'No Content', );
