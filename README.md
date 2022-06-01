@@ -43,17 +43,17 @@ please run:
     2. [GET] http://127.0.0.1:8000/api/koli/remove/{id} => to remove data from koli table
     3. [GET] http://127.0.0.1:8000/api/user/remove/{id} => to remove data from user table
    
-   Admin can remove data from the item, koli, and user table using the link above, by entering the id of the data you want to delete.
+    Admin can remove data from the item, koli, and user table using the link above, by entering the id of the data you want to delete.
  
  2. [POST]  http://127.0.0.1:8000/api/putin/koli
  
-   admin can put in koli(s) under user, using: http://127.0.0.1:8000/api/putin/koli  
-   </br>The variables needed are:
-   1. koli (string)
-   2. user_id (integer)
+    admin can put in koli(s) under user, using: http://127.0.0.1:8000/api/putin/koli  
+    </br>The variables needed are:
+    1. koli (string)
+    2. user_id (integer)
 
  3. [GET] http://127.0.0.1:8000/api/user
  
-   admin can display all registered users in the user table, using: http://127.0.0.1:8000/api/user
+    admin can display all registered users in the user table, using: http://127.0.0.1:8000/api/user
  
    
