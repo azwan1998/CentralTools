@@ -37,9 +37,9 @@ silahkan jalankan :
    
  Selain perintah task diatas admin juga bisa melakukan beberapa perintah selain task, antara lain :
  
- 1. 1. [POST] http://127.0.0.1:8000/api/item/remove/{id} => untuk meremove data pada tabel item
-    2. [POST] http://127.0.0.1:8000/api/koli/remove/{id} => untuk meremove data pada tabel koli
-    3. [POST] http://127.0.0.1:8000/api/user/remove/{id} => untuk meremove data pada tabel user
+ 1. 1. [GET] http://127.0.0.1:8000/api/item/remove/{id} => untuk meremove data pada tabel item
+    2. [GET] http://127.0.0.1:8000/api/koli/remove/{id} => untuk meremove data pada tabel koli
+    3. [GET] http://127.0.0.1:8000/api/user/remove/{id} => untuk meremove data pada tabel user
    
    admin dapat melakukan remove data pada tabel item, koli, dan user dengan menggunakan link diatas, dengan menambahkan id data yang ingin di hapuskan
  
