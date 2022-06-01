@@ -22,7 +22,12 @@ silahkan jalankan :
 3. [POST] http://127.0.0.1:8000/api/takeout/{id}
 
    masukkan {id} dengan id yang ingin di ubah di tabel item.
-   admin dapat merubah data item menggunakan http://127.0.0.1:8000/api/takeout/1 , untuk mengubah data id 1 pada tabel item.
+   admin dapat merubah data item menggunakan http://127.0.0.1:8000/api/takeout/1 , untuk mengubah data id 1 pada tabel item. 
+   ada pun variable yang di butuhkan :
+   1. name (string)
+   2. qty (integer)
+   3. user_id (integer)
+   4. koli_id (integer)
    
 4. [GET] http://127.0.0.1:8000/api/koli/common/{id}
 
