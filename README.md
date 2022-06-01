@@ -3,7 +3,7 @@ Penjelasan Sistem
 silahkan jalankan :
 
 1. php artisan migrate
-2. php artisan db:seed
+2. php artisan db:seed UserTableSeeder
 
 1. [POST] http://127.0.0.1:8000/api/register
    
@@ -15,7 +15,7 @@ silahkan jalankan :
 2. [POST] http://127.0.0.1:8000/api/putin
 
    admin dapat menambahkan data item berdasarkan koli dan user menggunakan http://127.0.0.1:8000/api/putin ada pun variable yang di butuhkan :
-   1. nama (string)
+   1. name (string)
    2. qty (integer)
    3. user_id (integer)
    4. koli_id (integer)
